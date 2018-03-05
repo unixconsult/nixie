@@ -1,0 +1,665 @@
+TimeQuest Timing Analyzer report for complete-nixie
+Sat Feb 17 23:33:42 2018
+Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'in_Data2'
+ 12. Hold: 'in_Data2'
+ 13. Minimum Pulse Width: 'in_Data2'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Setup Transfers
+ 19. Hold Transfers
+ 20. Report TCCS
+ 21. Report RSKM
+ 22. Unconstrained Paths
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; complete-nixie                                     ;
+; Device Family      ; MAX II                                             ;
+; Device Name        ; EPM240T100C4                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; in_Data2   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { in_Data2 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 141.52 MHz ; 141.52 MHz      ; in_Data2   ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Setup Summary                     ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; in_Data2 ; -6.066 ; -193.728      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Hold Summary                     ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; in_Data2 ; 1.353 ; 0.000         ;
++----------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------+
+; Minimum Pulse Width Summary       ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; in_Data2 ; -2.289 ; -2.289        ;
++----------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'in_Data2'                                                                                                        ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -6.066 ; nixie:inst|dhour[1] ; nixie:inst|dmin[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.795      ;
+; -6.066 ; nixie:inst|dhour[1] ; nixie:inst|dmin[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.795      ;
+; -6.066 ; nixie:inst|dhour[1] ; nixie:inst|dmin[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.795      ;
+; -5.965 ; nixie:inst|dmin[1]  ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.694      ;
+; -5.963 ; nixie:inst|dmin[0]  ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.692      ;
+; -5.960 ; nixie:inst|dmin[1]  ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.689      ;
+; -5.958 ; nixie:inst|dmin[0]  ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.687      ;
+; -5.955 ; nixie:inst|min[0]   ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.684      ;
+; -5.950 ; nixie:inst|min[0]   ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.679      ;
+; -5.875 ; nixie:inst|dmin[1]  ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.604      ;
+; -5.874 ; nixie:inst|ssec[0]  ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.603      ;
+; -5.873 ; nixie:inst|dmin[0]  ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.602      ;
+; -5.870 ; nixie:inst|ssec[0]  ; nixie:inst|dhour[1] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.599      ;
+; -5.865 ; nixie:inst|min[0]   ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.594      ;
+; -5.812 ; nixie:inst|hour[2]  ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.541      ;
+; -5.810 ; nixie:inst|dhour[0] ; nixie:inst|dmin[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.539      ;
+; -5.810 ; nixie:inst|dhour[0] ; nixie:inst|dmin[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.539      ;
+; -5.810 ; nixie:inst|dhour[0] ; nixie:inst|dmin[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.539      ;
+; -5.804 ; nixie:inst|hour[0]  ; nixie:inst|dmin[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.533      ;
+; -5.804 ; nixie:inst|hour[0]  ; nixie:inst|dmin[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.533      ;
+; -5.804 ; nixie:inst|hour[0]  ; nixie:inst|dmin[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.533      ;
+; -5.784 ; nixie:inst|min[1]   ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.513      ;
+; -5.779 ; nixie:inst|min[1]   ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.508      ;
+; -5.770 ; nixie:inst|ssec[0]  ; nixie:inst|dmin[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.499      ;
+; -5.770 ; nixie:inst|ssec[0]  ; nixie:inst|dmin[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.499      ;
+; -5.770 ; nixie:inst|ssec[0]  ; nixie:inst|dmin[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.499      ;
+; -5.758 ; nixie:inst|ssec[3]  ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.487      ;
+; -5.754 ; nixie:inst|ssec[3]  ; nixie:inst|dhour[1] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.483      ;
+; -5.737 ; nixie:inst|hour[2]  ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.466      ;
+; -5.710 ; nixie:inst|dmin[2]  ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.439      ;
+; -5.705 ; nixie:inst|dmin[2]  ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.434      ;
+; -5.703 ; nixie:inst|hour[2]  ; nixie:inst|dmin[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.432      ;
+; -5.703 ; nixie:inst|hour[2]  ; nixie:inst|dmin[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.432      ;
+; -5.703 ; nixie:inst|hour[2]  ; nixie:inst|dmin[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.432      ;
+; -5.694 ; nixie:inst|min[1]   ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.423      ;
+; -5.689 ; nixie:inst|dhour[1] ; nixie:inst|dsec[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.418      ;
+; -5.689 ; nixie:inst|dhour[1] ; nixie:inst|dsec[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.418      ;
+; -5.674 ; nixie:inst|dmin[1]  ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.403      ;
+; -5.672 ; nixie:inst|dmin[0]  ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.401      ;
+; -5.664 ; nixie:inst|min[0]   ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.393      ;
+; -5.658 ; nixie:inst|min[3]   ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.387      ;
+; -5.654 ; nixie:inst|ssec[3]  ; nixie:inst|dmin[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.383      ;
+; -5.654 ; nixie:inst|ssec[3]  ; nixie:inst|dmin[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.383      ;
+; -5.654 ; nixie:inst|ssec[3]  ; nixie:inst|dmin[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.383      ;
+; -5.653 ; nixie:inst|min[3]   ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.382      ;
+; -5.635 ; nixie:inst|hour[3]  ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.364      ;
+; -5.629 ; nixie:inst|ssec[0]  ; nixie:inst|min[0]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.358      ;
+; -5.629 ; nixie:inst|ssec[0]  ; nixie:inst|min[1]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.358      ;
+; -5.629 ; nixie:inst|ssec[0]  ; nixie:inst|min[2]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.358      ;
+; -5.629 ; nixie:inst|ssec[0]  ; nixie:inst|min[3]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.358      ;
+; -5.620 ; nixie:inst|dmin[2]  ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.349      ;
+; -5.611 ; nixie:inst|ssec[2]  ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.340      ;
+; -5.607 ; nixie:inst|ssec[2]  ; nixie:inst|dhour[1] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.336      ;
+; -5.568 ; nixie:inst|min[3]   ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.297      ;
+; -5.560 ; nixie:inst|hour[3]  ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.289      ;
+; -5.520 ; nixie:inst|hour[3]  ; nixie:inst|dmin[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.249      ;
+; -5.520 ; nixie:inst|hour[3]  ; nixie:inst|dmin[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.249      ;
+; -5.520 ; nixie:inst|hour[3]  ; nixie:inst|dmin[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.249      ;
+; -5.517 ; nixie:inst|hour[0]  ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.246      ;
+; -5.513 ; nixie:inst|ssec[3]  ; nixie:inst|min[0]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.242      ;
+; -5.513 ; nixie:inst|ssec[3]  ; nixie:inst|min[1]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.242      ;
+; -5.513 ; nixie:inst|ssec[3]  ; nixie:inst|min[2]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.242      ;
+; -5.513 ; nixie:inst|ssec[3]  ; nixie:inst|min[3]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.242      ;
+; -5.511 ; nixie:inst|dhour[1] ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.240      ;
+; -5.509 ; nixie:inst|dmin[1]  ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.238      ;
+; -5.507 ; nixie:inst|ssec[0]  ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.236      ;
+; -5.507 ; nixie:inst|dhour[1] ; nixie:inst|dhour[1] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.236      ;
+; -5.507 ; nixie:inst|ssec[2]  ; nixie:inst|dmin[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.236      ;
+; -5.507 ; nixie:inst|ssec[2]  ; nixie:inst|dmin[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.236      ;
+; -5.507 ; nixie:inst|ssec[2]  ; nixie:inst|dmin[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.236      ;
+; -5.507 ; nixie:inst|dmin[0]  ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.236      ;
+; -5.505 ; nixie:inst|dmin[1]  ; nixie:inst|dhour[1] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.234      ;
+; -5.503 ; nixie:inst|dmin[0]  ; nixie:inst|dhour[1] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.232      ;
+; -5.502 ; nixie:inst|ssec[0]  ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.231      ;
+; -5.499 ; nixie:inst|min[0]   ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.228      ;
+; -5.495 ; nixie:inst|min[0]   ; nixie:inst|dhour[1] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.224      ;
+; -5.493 ; nixie:inst|min[1]   ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.222      ;
+; -5.461 ; nixie:inst|dhour[1] ; nixie:inst|min[0]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.190      ;
+; -5.461 ; nixie:inst|dhour[1] ; nixie:inst|min[1]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.190      ;
+; -5.461 ; nixie:inst|dhour[1] ; nixie:inst|min[2]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.190      ;
+; -5.461 ; nixie:inst|dhour[1] ; nixie:inst|min[3]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.190      ;
+; -5.442 ; nixie:inst|hour[0]  ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.171      ;
+; -5.433 ; nixie:inst|dhour[0] ; nixie:inst|dsec[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.162      ;
+; -5.433 ; nixie:inst|dhour[0] ; nixie:inst|dsec[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.162      ;
+; -5.427 ; nixie:inst|hour[0]  ; nixie:inst|dsec[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.156      ;
+; -5.427 ; nixie:inst|hour[0]  ; nixie:inst|dsec[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.156      ;
+; -5.419 ; nixie:inst|dmin[2]  ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.148      ;
+; -5.417 ; nixie:inst|ssec[0]  ; nixie:inst|hour[1]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.146      ;
+; -5.391 ; nixie:inst|ssec[3]  ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.120      ;
+; -5.386 ; nixie:inst|ssec[3]  ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.115      ;
+; -5.367 ; nixie:inst|min[3]   ; nixie:inst|hour[0]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.096      ;
+; -5.366 ; nixie:inst|ssec[2]  ; nixie:inst|min[0]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.095      ;
+; -5.366 ; nixie:inst|ssec[2]  ; nixie:inst|min[1]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.095      ;
+; -5.366 ; nixie:inst|ssec[2]  ; nixie:inst|min[2]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.095      ;
+; -5.366 ; nixie:inst|ssec[2]  ; nixie:inst|min[3]   ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.095      ;
+; -5.357 ; nixie:inst|ssec[1]  ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.086      ;
+; -5.353 ; nixie:inst|ssec[1]  ; nixie:inst|dhour[1] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.082      ;
+; -5.346 ; nixie:inst|min[2]   ; nixie:inst|hour[3]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.075      ;
+; -5.341 ; nixie:inst|min[2]   ; nixie:inst|hour[2]  ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.070      ;
+; -5.328 ; nixie:inst|min[1]   ; nixie:inst|dhour[0] ; in_Data2     ; in_Data2    ; 1.000        ; 0.000      ; 6.057      ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'in_Data2'                                                                                                            ;
++-------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; 1.353 ; nixie:inst|ssec[3]  ; nixie:inst|ssec[3]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.532      ;
+; 1.365 ; nixie:inst|x        ; nixie:inst|x            ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.544      ;
+; 1.366 ; nixie:inst|x        ; nixie:inst|dot1         ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.545      ;
+; 1.366 ; nixie:inst|x        ; nixie:inst|dot2         ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.545      ;
+; 1.385 ; nixie:inst|dhour[0] ; nixie:inst|dhourleds[2] ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.564      ;
+; 1.391 ; nixie:inst|ssec[1]  ; nixie:inst|ssec[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.570      ;
+; 1.393 ; nixie:inst|ssec[1]  ; nixie:inst|ssec[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.572      ;
+; 1.542 ; nixie:inst|hour[2]  ; nixie:inst|hour[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.721      ;
+; 1.557 ; nixie:inst|hour[0]  ; nixie:inst|hour[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.736      ;
+; 1.562 ; nixie:inst|dhour[1] ; nixie:inst|dhourleds[2] ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.741      ;
+; 1.682 ; nixie:inst|min[1]   ; nixie:inst|min[1]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.861      ;
+; 1.695 ; nixie:inst|dmin[1]  ; nixie:inst|dmin[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.874      ;
+; 1.696 ; nixie:inst|dmin[1]  ; nixie:inst|dminleds[3]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.875      ;
+; 1.699 ; nixie:inst|dmin[1]  ; nixie:inst|dminleds[1]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.878      ;
+; 1.703 ; nixie:inst|dmin[1]  ; nixie:inst|dminleds[4]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.882      ;
+; 1.712 ; nixie:inst|dmin[1]  ; nixie:inst|dmin[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.891      ;
+; 1.713 ; nixie:inst|dmin[1]  ; nixie:inst|dminleds[0]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.892      ;
+; 1.715 ; nixie:inst|dmin[1]  ; nixie:inst|dmin[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.894      ;
+; 1.715 ; nixie:inst|dmin[1]  ; nixie:inst|dminleds[2]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.894      ;
+; 1.756 ; nixie:inst|dsec[2]  ; nixie:inst|dsec[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.935      ;
+; 1.764 ; nixie:inst|dhour[0] ; nixie:inst|dhour[0]     ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.943      ;
+; 1.767 ; nixie:inst|dhour[0] ; nixie:inst|dhour[1]     ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.946      ;
+; 1.813 ; nixie:inst|hour[3]  ; nixie:inst|hour[3]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 1.992      ;
+; 1.837 ; nixie:inst|min[3]   ; nixie:inst|min[3]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.016      ;
+; 1.863 ; nixie:inst|min[0]   ; nixie:inst|min[1]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.042      ;
+; 1.874 ; nixie:inst|dsec[1]  ; nixie:inst|dsec[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.053      ;
+; 1.915 ; nixie:inst|dsec[0]  ; nixie:inst|dsec[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.094      ;
+; 1.919 ; nixie:inst|dsec[1]  ; nixie:inst|dsec[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.098      ;
+; 1.983 ; nixie:inst|dmin[0]  ; nixie:inst|dmin[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.162      ;
+; 1.984 ; nixie:inst|dmin[0]  ; nixie:inst|dminleds[0]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.163      ;
+; 1.985 ; nixie:inst|dmin[0]  ; nixie:inst|dminleds[2]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.164      ;
+; 1.986 ; nixie:inst|dmin[0]  ; nixie:inst|dmin[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.165      ;
+; 1.990 ; nixie:inst|dmin[0]  ; nixie:inst|dminleds[4]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.169      ;
+; 1.991 ; nixie:inst|dmin[0]  ; nixie:inst|dminleds[1]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.170      ;
+; 1.992 ; nixie:inst|dmin[0]  ; nixie:inst|dmin[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.171      ;
+; 1.993 ; nixie:inst|dmin[0]  ; nixie:inst|dminleds[3]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.172      ;
+; 2.053 ; nixie:inst|dsec[2]  ; nixie:inst|dsec[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.232      ;
+; 2.116 ; nixie:inst|ssec[2]  ; nixie:inst|ssec[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.295      ;
+; 2.118 ; nixie:inst|ssec[2]  ; nixie:inst|ssec[3]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.297      ;
+; 2.190 ; nixie:inst|hour[0]  ; nixie:inst|hour[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.369      ;
+; 2.193 ; nixie:inst|min[0]   ; nixie:inst|min[0]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.372      ;
+; 2.250 ; nixie:inst|ssec[0]  ; nixie:inst|ssec[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.429      ;
+; 2.341 ; nixie:inst|dhour[1] ; nixie:inst|dhourleds[1] ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.520      ;
+; 2.342 ; nixie:inst|dhour[1] ; nixie:inst|anode4       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.521      ;
+; 2.349 ; nixie:inst|hour[1]  ; nixie:inst|hourleds[7]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.528      ;
+; 2.355 ; nixie:inst|hour[1]  ; nixie:inst|hourleds[6]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.534      ;
+; 2.356 ; nixie:inst|hour[1]  ; nixie:inst|hourleds[4]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.535      ;
+; 2.358 ; nixie:inst|hour[1]  ; nixie:inst|hourleds[3]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.537      ;
+; 2.359 ; nixie:inst|hour[1]  ; nixie:inst|hourleds[8]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.538      ;
+; 2.359 ; nixie:inst|hour[1]  ; nixie:inst|hourleds[5]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.538      ;
+; 2.428 ; nixie:inst|min[2]   ; nixie:inst|min[2]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.607      ;
+; 2.431 ; nixie:inst|min[2]   ; nixie:inst|min[3]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.610      ;
+; 2.494 ; nixie:inst|hour[0]  ; nixie:inst|hourleds[9]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.673      ;
+; 2.495 ; nixie:inst|hour[0]  ; nixie:inst|hourleds[2]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.674      ;
+; 2.496 ; nixie:inst|hour[0]  ; nixie:inst|hourleds[0]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.675      ;
+; 2.499 ; nixie:inst|hour[0]  ; nixie:inst|hourleds[1]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.678      ;
+; 2.517 ; nixie:inst|dsec[0]  ; nixie:inst|dsec[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.696      ;
+; 2.548 ; nixie:inst|dhour[0] ; nixie:inst|dhourleds[1] ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.727      ;
+; 2.551 ; nixie:inst|dhour[0] ; nixie:inst|anode4       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.730      ;
+; 2.608 ; nixie:inst|hour[1]  ; nixie:inst|hour[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.787      ;
+; 2.631 ; nixie:inst|ssec[1]  ; nixie:inst|ssec[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.810      ;
+; 2.643 ; nixie:inst|ssec[1]  ; nixie:inst|ssec[3]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.822      ;
+; 2.658 ; nixie:inst|min[1]   ; nixie:inst|min[2]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.837      ;
+; 2.694 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[7]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.873      ;
+; 2.700 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[6]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.879      ;
+; 2.702 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[4]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.881      ;
+; 2.703 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[3]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.882      ;
+; 2.704 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[8]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.883      ;
+; 2.704 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[5]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.883      ;
+; 2.709 ; nixie:inst|ssec[0]  ; nixie:inst|ssec[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.888      ;
+; 2.712 ; nixie:inst|ssec[0]  ; nixie:inst|ssec[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.891      ;
+; 2.716 ; nixie:inst|dmin[1]  ; nixie:inst|dminleds[5]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.895      ;
+; 2.730 ; nixie:inst|min[2]   ; nixie:inst|min[0]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.909      ;
+; 2.736 ; nixie:inst|hour[3]  ; nixie:inst|hourleds[1]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.915      ;
+; 2.742 ; nixie:inst|hour[3]  ; nixie:inst|hourleds[0]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.921      ;
+; 2.744 ; nixie:inst|hour[3]  ; nixie:inst|hourleds[9]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.923      ;
+; 2.745 ; nixie:inst|hour[3]  ; nixie:inst|hourleds[2]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.924      ;
+; 2.790 ; nixie:inst|min[1]   ; nixie:inst|min[3]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.969      ;
+; 2.804 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[2]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.983      ;
+; 2.806 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[9]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.985      ;
+; 2.813 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[0]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.992      ;
+; 2.817 ; nixie:inst|hour[2]  ; nixie:inst|hourleds[1]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 2.996      ;
+; 2.827 ; nixie:inst|dmin[2]  ; nixie:inst|dmin[2]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.006      ;
+; 2.830 ; nixie:inst|dmin[2]  ; nixie:inst|dminleds[2]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.009      ;
+; 2.833 ; nixie:inst|dmin[2]  ; nixie:inst|dminleds[0]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.012      ;
+; 2.836 ; nixie:inst|dmin[2]  ; nixie:inst|dmin[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.015      ;
+; 2.842 ; nixie:inst|dmin[2]  ; nixie:inst|dminleds[4]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.021      ;
+; 2.844 ; nixie:inst|dmin[2]  ; nixie:inst|dminleds[1]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.023      ;
+; 2.845 ; nixie:inst|dmin[2]  ; nixie:inst|dmin[1]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.024      ;
+; 2.845 ; nixie:inst|dmin[2]  ; nixie:inst|dminleds[3]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.024      ;
+; 2.885 ; nixie:inst|ssec[2]  ; nixie:inst|ssec[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.064      ;
+; 2.949 ; nixie:inst|dmin[2]  ; nixie:inst|dminleds[5]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.128      ;
+; 3.032 ; nixie:inst|ssec[3]  ; nixie:inst|ssec[0]      ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.211      ;
+; 3.042 ; nixie:inst|min[3]   ; nixie:inst|min[0]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.221      ;
+; 3.112 ; nixie:inst|min[0]   ; nixie:inst|min[3]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.291      ;
+; 3.128 ; nixie:inst|dmin[0]  ; nixie:inst|dminleds[5]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.307      ;
+; 3.161 ; nixie:inst|dhour[1] ; nixie:inst|dhourleds[0] ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.340      ;
+; 3.164 ; nixie:inst|hour[1]  ; nixie:inst|hourleds[1]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.343      ;
+; 3.168 ; nixie:inst|min[1]   ; nixie:inst|min[0]       ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.347      ;
+; 3.170 ; nixie:inst|hour[1]  ; nixie:inst|hourleds[0]  ; in_Data2     ; in_Data2    ; 0.000        ; 0.000      ; 3.349      ;
++-------+---------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'in_Data2'                                                                             ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; in_Data2 ; Rise       ; in_Data2                ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|anode1       ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|anode1       ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|anode2       ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|anode2       ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|anode4       ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|anode4       ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dhour[0]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dhour[0]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dhour[1]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dhour[1]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dhourleds[0] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dhourleds[0] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dhourleds[1] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dhourleds[1] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dhourleds[2] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dhourleds[2] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dmin[0]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dmin[0]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dmin[1]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dmin[1]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dmin[2]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dmin[2]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dminleds[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dminleds[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dminleds[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dminleds[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dminleds[2]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dminleds[2]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dminleds[3]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dminleds[3]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dminleds[4]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dminleds[4]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dminleds[5]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dminleds[5]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dot1         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dot1         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dot2         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dot2         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dsec[0]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dsec[0]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dsec[1]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dsec[1]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|dsec[2]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|dsec[2]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hour[0]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hour[0]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hour[1]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hour[1]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hour[2]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hour[2]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hour[3]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hour[3]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[2]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[2]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[3]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[3]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[4]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[4]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[5]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[5]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[6]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[6]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[7]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[7]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[8]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[8]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|hourleds[9]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|hourleds[9]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|min[0]       ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|min[0]       ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|min[1]       ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|min[1]       ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|min[2]       ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|min[2]       ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|min[3]       ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|min[3]       ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[0]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[0]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[1]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[1]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[2]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[2]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[3]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[3]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[4]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[4]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[5]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[5]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[6]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[6]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[7]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[7]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[8]   ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; in_Data2 ; Fall       ; nixie:inst|minleds[8]   ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; in_Data2 ; Fall       ; nixie:inst|minleds[9]   ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Setup Times                                                                 ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; anodes_off    ; in_Data2   ; -1.234 ; -1.234 ; Fall       ; in_Data2        ;
+; hoursetbutton ; in_Data2   ; 4.445  ; 4.445  ; Fall       ; in_Data2        ;
+; minsetbutton  ; in_Data2   ; 3.907  ; 3.907  ; Fall       ; in_Data2        ;
+; res           ; in_Data2   ; 2.765  ; 2.765  ; Fall       ; in_Data2        ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; anodes_off    ; in_Data2   ; 1.685 ; 1.685 ; Fall       ; in_Data2        ;
+; hoursetbutton ; in_Data2   ; 0.062 ; 0.062 ; Fall       ; in_Data2        ;
+; minsetbutton  ; in_Data2   ; 0.415 ; 0.415 ; Fall       ; in_Data2        ;
+; res           ; in_Data2   ; 1.234 ; 1.234 ; Fall       ; in_Data2        ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; anode1        ; in_Data2   ; 10.287 ; 10.287 ; Fall       ; in_Data2        ;
+; anode2        ; in_Data2   ; 9.863  ; 9.863  ; Fall       ; in_Data2        ;
+; anode4        ; in_Data2   ; 9.867  ; 9.867  ; Fall       ; in_Data2        ;
+; dhourleds[*]  ; in_Data2   ; 10.006 ; 10.006 ; Fall       ; in_Data2        ;
+;  dhourleds[0] ; in_Data2   ; 8.948  ; 8.948  ; Fall       ; in_Data2        ;
+;  dhourleds[1] ; in_Data2   ; 8.943  ; 8.943  ; Fall       ; in_Data2        ;
+;  dhourleds[2] ; in_Data2   ; 10.006 ; 10.006 ; Fall       ; in_Data2        ;
+; dminleds[*]   ; in_Data2   ; 10.923 ; 10.923 ; Fall       ; in_Data2        ;
+;  dminleds[0]  ; in_Data2   ; 10.377 ; 10.377 ; Fall       ; in_Data2        ;
+;  dminleds[1]  ; in_Data2   ; 10.923 ; 10.923 ; Fall       ; in_Data2        ;
+;  dminleds[2]  ; in_Data2   ; 10.429 ; 10.429 ; Fall       ; in_Data2        ;
+;  dminleds[3]  ; in_Data2   ; 10.471 ; 10.471 ; Fall       ; in_Data2        ;
+;  dminleds[4]  ; in_Data2   ; 10.013 ; 10.013 ; Fall       ; in_Data2        ;
+;  dminleds[5]  ; in_Data2   ; 9.981  ; 9.981  ; Fall       ; in_Data2        ;
+; dot1          ; in_Data2   ; 10.184 ; 10.184 ; Fall       ; in_Data2        ;
+; dot2          ; in_Data2   ; 10.356 ; 10.356 ; Fall       ; in_Data2        ;
+; hourleds[*]   ; in_Data2   ; 10.682 ; 10.682 ; Fall       ; in_Data2        ;
+;  hourleds[0]  ; in_Data2   ; 10.682 ; 10.682 ; Fall       ; in_Data2        ;
+;  hourleds[1]  ; in_Data2   ; 9.953  ; 9.953  ; Fall       ; in_Data2        ;
+;  hourleds[2]  ; in_Data2   ; 9.826  ; 9.826  ; Fall       ; in_Data2        ;
+;  hourleds[3]  ; in_Data2   ; 10.246 ; 10.246 ; Fall       ; in_Data2        ;
+;  hourleds[4]  ; in_Data2   ; 10.252 ; 10.252 ; Fall       ; in_Data2        ;
+;  hourleds[5]  ; in_Data2   ; 10.266 ; 10.266 ; Fall       ; in_Data2        ;
+;  hourleds[6]  ; in_Data2   ; 10.267 ; 10.267 ; Fall       ; in_Data2        ;
+;  hourleds[7]  ; in_Data2   ; 9.904  ; 9.904  ; Fall       ; in_Data2        ;
+;  hourleds[8]  ; in_Data2   ; 10.552 ; 10.552 ; Fall       ; in_Data2        ;
+;  hourleds[9]  ; in_Data2   ; 9.926  ; 9.926  ; Fall       ; in_Data2        ;
+; minleds[*]    ; in_Data2   ; 10.300 ; 10.300 ; Fall       ; in_Data2        ;
+;  minleds[0]   ; in_Data2   ; 8.948  ; 8.948  ; Fall       ; in_Data2        ;
+;  minleds[1]   ; in_Data2   ; 8.954  ; 8.954  ; Fall       ; in_Data2        ;
+;  minleds[2]   ; in_Data2   ; 8.944  ; 8.944  ; Fall       ; in_Data2        ;
+;  minleds[3]   ; in_Data2   ; 8.942  ; 8.942  ; Fall       ; in_Data2        ;
+;  minleds[4]   ; in_Data2   ; 8.948  ; 8.948  ; Fall       ; in_Data2        ;
+;  minleds[5]   ; in_Data2   ; 9.842  ; 9.842  ; Fall       ; in_Data2        ;
+;  minleds[6]   ; in_Data2   ; 9.933  ; 9.933  ; Fall       ; in_Data2        ;
+;  minleds[7]   ; in_Data2   ; 10.300 ; 10.300 ; Fall       ; in_Data2        ;
+;  minleds[8]   ; in_Data2   ; 10.170 ; 10.170 ; Fall       ; in_Data2        ;
+;  minleds[9]   ; in_Data2   ; 10.043 ; 10.043 ; Fall       ; in_Data2        ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; anode1        ; in_Data2   ; 10.287 ; 10.287 ; Fall       ; in_Data2        ;
+; anode2        ; in_Data2   ; 9.863  ; 9.863  ; Fall       ; in_Data2        ;
+; anode4        ; in_Data2   ; 9.867  ; 9.867  ; Fall       ; in_Data2        ;
+; dhourleds[*]  ; in_Data2   ; 8.943  ; 8.943  ; Fall       ; in_Data2        ;
+;  dhourleds[0] ; in_Data2   ; 8.948  ; 8.948  ; Fall       ; in_Data2        ;
+;  dhourleds[1] ; in_Data2   ; 8.943  ; 8.943  ; Fall       ; in_Data2        ;
+;  dhourleds[2] ; in_Data2   ; 10.006 ; 10.006 ; Fall       ; in_Data2        ;
+; dminleds[*]   ; in_Data2   ; 9.981  ; 9.981  ; Fall       ; in_Data2        ;
+;  dminleds[0]  ; in_Data2   ; 10.377 ; 10.377 ; Fall       ; in_Data2        ;
+;  dminleds[1]  ; in_Data2   ; 10.923 ; 10.923 ; Fall       ; in_Data2        ;
+;  dminleds[2]  ; in_Data2   ; 10.429 ; 10.429 ; Fall       ; in_Data2        ;
+;  dminleds[3]  ; in_Data2   ; 10.471 ; 10.471 ; Fall       ; in_Data2        ;
+;  dminleds[4]  ; in_Data2   ; 10.013 ; 10.013 ; Fall       ; in_Data2        ;
+;  dminleds[5]  ; in_Data2   ; 9.981  ; 9.981  ; Fall       ; in_Data2        ;
+; dot1          ; in_Data2   ; 10.184 ; 10.184 ; Fall       ; in_Data2        ;
+; dot2          ; in_Data2   ; 10.356 ; 10.356 ; Fall       ; in_Data2        ;
+; hourleds[*]   ; in_Data2   ; 9.826  ; 9.826  ; Fall       ; in_Data2        ;
+;  hourleds[0]  ; in_Data2   ; 10.682 ; 10.682 ; Fall       ; in_Data2        ;
+;  hourleds[1]  ; in_Data2   ; 9.953  ; 9.953  ; Fall       ; in_Data2        ;
+;  hourleds[2]  ; in_Data2   ; 9.826  ; 9.826  ; Fall       ; in_Data2        ;
+;  hourleds[3]  ; in_Data2   ; 10.246 ; 10.246 ; Fall       ; in_Data2        ;
+;  hourleds[4]  ; in_Data2   ; 10.252 ; 10.252 ; Fall       ; in_Data2        ;
+;  hourleds[5]  ; in_Data2   ; 10.266 ; 10.266 ; Fall       ; in_Data2        ;
+;  hourleds[6]  ; in_Data2   ; 10.267 ; 10.267 ; Fall       ; in_Data2        ;
+;  hourleds[7]  ; in_Data2   ; 9.904  ; 9.904  ; Fall       ; in_Data2        ;
+;  hourleds[8]  ; in_Data2   ; 10.552 ; 10.552 ; Fall       ; in_Data2        ;
+;  hourleds[9]  ; in_Data2   ; 9.926  ; 9.926  ; Fall       ; in_Data2        ;
+; minleds[*]    ; in_Data2   ; 8.942  ; 8.942  ; Fall       ; in_Data2        ;
+;  minleds[0]   ; in_Data2   ; 8.948  ; 8.948  ; Fall       ; in_Data2        ;
+;  minleds[1]   ; in_Data2   ; 8.954  ; 8.954  ; Fall       ; in_Data2        ;
+;  minleds[2]   ; in_Data2   ; 8.944  ; 8.944  ; Fall       ; in_Data2        ;
+;  minleds[3]   ; in_Data2   ; 8.942  ; 8.942  ; Fall       ; in_Data2        ;
+;  minleds[4]   ; in_Data2   ; 8.948  ; 8.948  ; Fall       ; in_Data2        ;
+;  minleds[5]   ; in_Data2   ; 9.842  ; 9.842  ; Fall       ; in_Data2        ;
+;  minleds[6]   ; in_Data2   ; 9.933  ; 9.933  ; Fall       ; in_Data2        ;
+;  minleds[7]   ; in_Data2   ; 10.300 ; 10.300 ; Fall       ; in_Data2        ;
+;  minleds[8]   ; in_Data2   ; 10.170 ; 10.170 ; Fall       ; in_Data2        ;
+;  minleds[9]   ; in_Data2   ; 10.043 ; 10.043 ; Fall       ; in_Data2        ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; in_Data2   ; in_Data2 ; 0        ; 0        ; 0        ; 667      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; in_Data2   ; in_Data2 ; 0        ; 0        ; 0        ; 667      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 62    ; 62   ;
+; Unconstrained Output Ports      ; 34    ; 34   ;
+; Unconstrained Output Port Paths ; 34    ; 34   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Sat Feb 17 23:33:37 2018
+Info: Command: quartus_sta complete-nixie -c complete-nixie
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'complete-nixie.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name in_Data2 in_Data2
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.066
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.066            -193.728 in_Data2 
+Info (332146): Worst-case hold slack is 1.353
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.353               0.000 in_Data2 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 in_Data2 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 313 megabytes
+    Info: Processing ended: Sat Feb 17 23:33:42 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
+
+
